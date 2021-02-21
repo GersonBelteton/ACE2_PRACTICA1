@@ -1,0 +1,551 @@
+{
+	"info": {
+		"_postman_id": "2944fbf6-1146-4822-9425-107f7575d848",
+		"name": "PRACTICA1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "USUARIO",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "pass",
+									"value": "admin",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://practica1-arqui2.herokuapp.com/auth",
+							"protocol": "https",
+							"host": [
+								"practica1-arqui2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://practica1-arqui2.herokuapp.com/usuario/get_all",
+							"protocol": "https",
+							"host": [
+								"practica1-arqui2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"usuario",
+								"get_all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://practica1-arqui2.herokuapp.com/usuario/get/1",
+							"protocol": "https",
+							"host": [
+								"practica1-arqui2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"usuario",
+								"get",
+								"1"
+							]
+						},
+						"description": "Se envia el id del usuario a buscar"
+					},
+					"response": []
+				},
+				{
+					"name": "crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nombres",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "apellidos",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "pass",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "edad",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "sexo",
+									"value": "M",
+									"type": "text"
+								},
+								{
+									"key": "peso",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "estatura",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "tipo",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://practica1-arqui2.herokuapp.com/usuario/crear",
+							"protocol": "https",
+							"host": [
+								"practica1-arqui2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"usuario",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://practica1-arqui2.herokuapp.com/usuario/delete/2",
+							"protocol": "https",
+							"host": [
+								"practica1-arqui2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"usuario",
+								"delete",
+								"2"
+							]
+						},
+						"description": "se manda el id del usuario a borrar"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "USUARIO_TEMPERATURA",
+			"item": [
+				{
+					"name": "get temperaturas by idUsuario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://practica1-arqui2.herokuapp.com/temperatura/usuario/1",
+							"protocol": "https",
+							"host": [
+								"practica1-arqui2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"temperatura",
+								"usuario",
+								"1"
+							]
+						},
+						"description": "trae las temperaturas del usuario segun su id"
+					},
+					"response": []
+				},
+				{
+					"name": "crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "atleta",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "temperatura",
+									"value": "60.2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://practica1-arqui2.herokuapp.com/temperatura/crear",
+							"protocol": "https",
+							"host": [
+								"practica1-arqui2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"temperatura",
+								"crear"
+							]
+						},
+						"description": "se envia el id del usuario y la temperatura"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://practica1-arqui2.herokuapp.com/temperatura/delete/1",
+							"protocol": "https",
+							"host": [
+								"practica1-arqui2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"temperatura",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "USUARIO_OXIGENO",
+			"item": [
+				{
+					"name": "get oxigeno by idUsuario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://practica1-arqui2.herokuapp.com/oxigeno/usuario/1",
+							"protocol": "https",
+							"host": [
+								"practica1-arqui2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"oxigeno",
+								"usuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "atleta",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "oxigeno",
+									"value": "70",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://practica1-arqui2.herokuapp.com/oxigeno/crear",
+							"protocol": "https",
+							"host": [
+								"practica1-arqui2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"oxigeno",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://practica1-arqui2.herokuapp.com/oxigeno/delete/2",
+							"protocol": "https",
+							"host": [
+								"practica1-arqui2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"oxigeno",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "USUARIO_FRECUENCIA_CARDIACA",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "atleta",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "frecuencia",
+									"value": "70",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://practica1-arqui2.herokuapp.com/frecuencia/crear",
+							"protocol": "https",
+							"host": [
+								"practica1-arqui2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"frecuencia",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get frecuencia by idUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://practica1-arqui2.herokuapp.com/frecuencia/usuario/1",
+							"protocol": "https",
+							"host": [
+								"practica1-arqui2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"frecuencia",
+								"usuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://practica1-arqui2.herokuapp.com/frecuencia/delete/2",
+							"protocol": "https",
+							"host": [
+								"practica1-arqui2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"frecuencia",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "USUARIO_COATCH",
+			"item": [
+				{
+					"name": "crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "atleta",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "coach",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://practica1-arqui2.herokuapp.com/coach/crear",
+							"protocol": "https",
+							"host": [
+								"practica1-arqui2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"coach",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all atletas by idCoach",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://practica1-arqui2.herokuapp.com/coach/3",
+							"protocol": "https",
+							"host": [
+								"practica1-arqui2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"coach",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://practica1-arqui2.herokuapp.com/coach/delete/1",
+							"protocol": "https",
+							"host": [
+								"practica1-arqui2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"coach",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single atleta by idAtleta and idCoatch",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://practica1-arqui2.herokuapp.com/coach/4/atleta/1",
+							"protocol": "https",
+							"host": [
+								"practica1-arqui2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"coach",
+								"4",
+								"atleta",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

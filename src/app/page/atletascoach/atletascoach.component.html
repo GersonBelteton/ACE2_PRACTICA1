@@ -1,0 +1,42 @@
+
+
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Atletas</h4>
+        <div class=" m-t-10">
+            <div class="col-xs-12">
+                <select class="form-select form-select-sm form-control" aria-label=".form-select-lg example"  [(ngModel)]="idAt" name="tipo" >
+                    <option value=1 *ngFor="let u of users" [ngValue]="u.id" >{{u.id}} {{u.nombres}} {{u.apellidos}}</option>
+                </select>
+                <button type="button" (click)="asignarAtleta() " class="btn btn-info dropdown-toggle" >
+                    Asignar atleta
+                </button>
+             </div>
+        
+        </div>
+
+        <table class="tablesaw table-striped table-hover table-bordered table tablesaw-columntoggle" data-tablesaw-mode="columntoggle" id="table-2683">
+            <thead>
+                <tr>
+                    <th scope="col" data-tablesaw-sortable-col="" >Nombre</th>
+                    <th scope="col" data-tablesaw-sortable-col="" >Edad</th>
+                    <th scope="col" data-tablesaw-sortable-col=""  >Genero</th>
+                    <th scope="col" data-tablesaw-sortable-col="" >Estatura</th>
+                    <th scope="col" data-tablesaw-sortable-col="" >Peso</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ac of atcoach">
+                    <td class="title"><a class="link" (click)="redirectDashboard(ac.usuario_id)"routerLinkActive="active" [routerLink]="['/dashboard']" >{{ac.nombres}} {{ac.apellidos}}</a></td>
+                    <td class="tablesaw-priority-3">{{ac.edad}}</td>
+                    <td class="tablesaw-priority-2">{{ac.sexo}}</td>
+                    <td class="tablesaw-priority-1">{{ac.estatura}}</td>
+                    <td class="tablesaw-priority-4">{{ac.peso}}</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>

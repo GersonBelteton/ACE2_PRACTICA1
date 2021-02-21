@@ -1,0 +1,71 @@
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h3 style="color:#7F0101;">Dashboard</h3>
+    </div>
+    <div class="col-md-7 align-self-center">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="javascript:void(0)">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+    </div>
+
+</div>
+
+
+<button *ngIf="this.idUser =='idAtletaCoach' "(click)="salirDashboard()" routerLinkActive="active" 
+class="btn btn-info btn-rounded" style="color: white;" >
+    <span class="hide-menu" style="color: white;"> Salir del dashboard</span>
+</button>
+
+
+
+
+<div>
+    <div>
+      <div style="display: block">
+        <canvas baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [plugins]="barChartPlugins"
+          [legend]="barChartLegend"
+          [chartType]="barChartType">
+        </canvas>
+      </div>
+    </div>
+  </div>
+
+  <table style="width: 100%;">
+    <tr>
+        <td>
+            <a routerLinkActive="active" [routerLink]="['/dashboard/temperatura']"
+            class="btn btn-info btn-rounded" style="color: white;" >
+                <i class="mdi mdi-temperature-celsius" style="color: white; float: left;"></i><span class="hide-menu" style="color: white;"> Temperatura</span>
+            </a>
+
+
+  
+        </td>
+        <td>
+            <a routerLinkActive="active" [routerLink]="['/dashboard/frecuencia']"
+            class="btn btn-info btn-rounded" style="color: white; float: right;" >
+                <i class="mdi mdi-heart-pulse" style="color: white; float: left;"></i><span class="hide-menu" style="color: white;">Ritmo Cardiaco</span>
+            </a>
+
+        </td>
+        <td>
+            <a routerLinkActive="active" [routerLink]="['/dashboard/oxigeno']"
+            class="btn btn-info btn-rounded" style="color: white; float: right;" >
+                <i class="mdi mdi-heart" style="color: white; float: left;"></i><span class="hide-menu" style="color: white;"> Oxigeno en la Sangre</span>
+            </a>
+            
+        </td>
+    </tr>
+
+
+  </table>
+
+
+ 

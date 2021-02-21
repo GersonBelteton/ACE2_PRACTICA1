@@ -1,0 +1,44 @@
+
+<h4>Oxigeno en la sangre</h4>
+<hr style="height: max-content;">
+
+
+<div class="row show-grid">
+  <div class="col-md-4"><h6>Promedio de los ultimos 10 datos: </h6></div>
+  <div class="col-md-4"><h5 style="float: left;color: rgb(101, 12, 245);">{{this.promedio}}</h5></div>
+</div>
+
+
+<div>
+    <div>
+      <div style="display: block">
+        <canvas baseChart height="100"
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [plugins]="barChartPlugins"
+          [legend]="barChartLegend"
+          [chartType]="barChartType">
+        </canvas>
+      </div>
+    </div>
+  </div>
+  
+  <table class="table color-table info-table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Oxigeno En la sangre</th>
+            <th>Fecha</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tr of oxigTiempoReal; index as i">
+          
+            <td>{{i+1}}</td>
+            <td>{{tr.oxigeno}}</td>
+            <td>{{tr.fecha}}</td>
+        </tr>
+
+    </tbody>
+</table>

@@ -1,0 +1,89 @@
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<section id="wrapper" class="login-register login-sidebar" style="background-image:url('https://res.cloudinary.com/dtpqmjmhk/image/upload/v1612762177/AYCE2/b15547e4-b614-4c72-a0d8-d07d441fa52c_xown1c.png');">
+    <div class="login-box card">
+        <div class="card-body">
+            <form  *ngIf="formData" class="form-horizontal form-material" id="loginform" [formGroup]="formData">
+                <a href="javascript:void(0)" class="text-center db"><img src="https://res.cloudinary.com/dtpqmjmhk/image/upload/v1612762112/AYCE2/usac_v7mqws.png" style="width: 100px; height: 100px;" alt="Home" /><br/></a>
+                <div class="form-group m-t-40">
+                    <div class="col-xs-12">
+                        <input class="form-control" type="text" formControlName="email" name="email" placeholder="Usuario">
+                        <!-- <div *ngIf="email && email.invalid && (email.dirty || email.touched)">
+                            <div class="alert alert-danger" role="alert" *ngIf="email && email.errors.required">
+                                El correo es requerido
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <input class="form-control" type="password" formControlName="password" name="password" placeholder="Contraseña">
+                        <!-- <div *ngIf="password && password.invalid && (password.dirty || password.touched)">
+                            <div class="alert alert-danger" role="alert" *ngIf="password && password.errors.required">
+                                La contraseña es requerida
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="col-md-12" *ngIf="dtincorrectos"> <p style="color: orangered;">Usuario o contraseña incorrectos</p></div>
+                <div class="form-group row">
+                    <div class="col-md-12">
+                        <a href="javascript:void(0)" (click)="openRecovery()" id="to-recover" class="text-dark pull-right"><i class="fa fa-lock m-r-5"></i> Olvidaste tu contraseña?</a>
+                    </div>
+                </div>
+                <div class="form-group text-center m-t-20">
+                    <div class="col-xs-12">
+                        <button class="btn btn-info btn-block text-uppercase btn-rounded" type="submit" [disabled]="!formData.valid" (click)="logIn()">Ingresar</button>
+                    </div>
+                </div>
+                <!--<div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">
+                        <div class="social">
+                            <a href="javascript:void(0)" class="btn  btn-facebook" data-toggle="tooltip" title="Login with Facebook"> <i aria-hidden="true" class="fa fa-facebook"></i> </a>
+                            <a href="javascript:void(0)" class="btn btn-googleplus" data-toggle="tooltip" title="Login with Google"> <i aria-hidden="true" class="fa fa-google-plus"></i> </a>
+                        </div>
+                    </div>
+                </div>-->
+                <div class="form-group m-b-0">
+                    <div class="col-sm-12 text-center">
+                        No tienes cuenta? <a href="/register" class="text-primary m-l-5"><b>Crear cuenta</b></a>
+                    </div>
+                </div>
+            </form>
+            <form  *ngIf="formRecovery" class="form-horizontal form-material" id="recoverform" [formGroup]="formRecovery" (ngSubmit)="recovery()">
+                <a href="javascript:void(0)" class="text-center db"><img src="https://res.cloudinary.com/dtpqmjmhk/image/upload/v1612762112/AYCE2/usac_v7mqws.png" style="width: 100px; height: 100px;" alt="Home" /><br/></a>
+                <div class="form-group ">
+                    <div class="col-xs-12">
+                        <h3>Recuperar contraseña</h3>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <div class="col-xs-12">
+                        <input class="form-control" type="text" formControlName="email" name="correo" placeholder="Correo electrónico">
+                        <!-- <div *ngIf="correo && correo.invalid && (correo.dirty || correo.touched)">
+                            <div class="alert alert-danger" role="alert" *ngIf="correo && correo.errors.required">
+                                El correo es requerido
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                
+                <div class="form-group text-center m-t-20">
+                    <div class="col-xs-12">
+                        <button class="btn btn-info btn-block text-uppercase btn-rounded" type="submit" [disabled]="!formRecovery.valid">Recuperar Contraseña</button>  
+                    </div>
+                </div>
+                <div class="form-group m-b-0">
+                    <div class="col-sm-12 text-center">
+                        Ya tienes una cuenta? <a href="javascript:void(0)" (click)="iniciarSesion()" class="text-primary m-l-5"><b>Inicia Sesión</b></a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->
+
