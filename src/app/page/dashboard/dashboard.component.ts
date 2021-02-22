@@ -137,7 +137,7 @@ export class DashboardComponent implements OnInit {
   public salirDashboard(){
     localStorage.setItem("idAtletaCoach", "0")
     //location.href="/dashboard"
-    this.router.navigate(['/dashboard'])
+    this.router.navigate(['/atletascoach'])
   }
 
 
