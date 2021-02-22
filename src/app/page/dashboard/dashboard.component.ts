@@ -3,6 +3,7 @@ import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import * as pluginDataLabels from 'chartjs-plugin-annotation';
 import { Label,BaseChartDirective } from 'ng2-charts'
 import {UsuarioService} from '../../service/usuario.service'
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -40,6 +41,7 @@ export class DashboardComponent implements OnInit {
     { data: this.oxig, label: 'Oxigeno en la sangre' }
   ];
   constructor(
+    private router: Router,
     private usuarioService: UsuarioService
 
   ) { }
@@ -134,7 +136,8 @@ export class DashboardComponent implements OnInit {
 
   public salirDashboard(){
     localStorage.setItem("idAtletaCoach", "0")
-    location.href="/dashboard"
+    //location.href="/dashboard"
+    this.router.navigate(['/dashboard'])
   }
 
 

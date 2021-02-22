@@ -51,7 +51,8 @@ export class LoginComponent implements OnInit {
         localStorage.setItem("currentNombre", res.nombres + " " + res.apellidos);
         localStorage.setItem("currentType", res.tipo_usuario)
         localStorage.setItem("idAtletaCoach", "0")
-        location.href = '/perfil'
+        //location.href = '/perfil'
+        this.router.navigate(['/perfil'])
         
       }, error => {
         console.log('hay un error :(')
